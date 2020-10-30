@@ -238,7 +238,9 @@ class Header extends React.Component {
                                 React.createElement("div", { className: 'fillerBox' }),
                                 this.props.loggedIn ? React.createElement(Admin, { isMobile: false, direction: 'down' }) : null,
                                 this.props.loggedIn ? React.createElement(Contribute, { isMobile: false, direction: 'down' }) : null,
-                                this.props.loggedIn ? React.createElement(HeaderButton, { name: 'PROFILE' }) : React.createElement(HeaderButton, { name: 'LOGIN', onClick: this.toggleLoginModal }),
+                                this.props.loggedIn ? React.createElement(react_router_dom_1.NavLink, { to: "/Profile" },
+                                    React.createElement(HeaderButton, { name: 'PROFILE' }),
+                                    " ") : React.createElement(HeaderButton, { name: 'LOGIN', onClick: this.toggleLoginModal }),
                                 this.props.loggedIn ? React.createElement(Logout, { logoutFunc: () => this.logout() }) : React.createElement(HeaderButton, { name: 'SIGNUP', onClick: this.toggleSignUpModal }))),
                         React.createElement("div", { style: { flex: '1' } },
                             React.createElement(SearchBar, null)))),
@@ -277,7 +279,8 @@ class Header extends React.Component {
                                         React.createElement(Contribute, { isMobile: true, direction: 'left' }))
                                     : React.createElement(reactstrap_1.DropdownItem, { onClick: this.toggleSignUpModal }, "SIGNUP"),
                                 this.props.loggedIn ?
-                                    React.createElement(reactstrap_1.DropdownItem, null, "PROFILE")
+                                    React.createElement(react_router_dom_1.NavLink, { to: '/Profile' },
+                                        React.createElement(reactstrap_1.DropdownItem, null, "PROFILE"))
                                     : null,
                                 this.props.loggedIn ?
                                     React.createElement(reactstrap_1.DropdownItem, { onClick: () => this.logout() }, "SIGNOUT")

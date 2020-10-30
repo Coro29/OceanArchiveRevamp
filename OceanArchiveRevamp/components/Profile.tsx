@@ -1,3 +1,4 @@
+
 declare var require: any
 
 var React = require('react');
@@ -30,7 +31,7 @@ class SearchBar extends React.Component {
                         {this.state.searchBy}
                     </DropdownToggle>
                     <DropdownMenu className='altDropdownMenu'>
-                        <DropdownItem onClick={() => this.switchSearch('Title')}>Title</DropdownItem>
+                        <DropdownItem onClick={() => this.switchSearch('Title')}>My Profile</DropdownItem>
                     </DropdownMenu>
                 </ButtonDropdown>
                 <input type='search' className='altSearchBar' placeholder='Search My Collections' />

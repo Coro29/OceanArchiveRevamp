@@ -318,7 +318,7 @@ export default class Header extends React.Component {
                                     <div className='fillerBox' />
                                     {this.props.loggedIn ? <Admin isMobile={false} direction='down' /> : null}
                                     {this.props.loggedIn ? <Contribute isMobile={false} direction='down' /> : null}
-                                    {this.props.loggedIn ? <HeaderButton name='PROFILE' /> : <HeaderButton name='LOGIN' onClick={this.toggleLoginModal} />}
+                                    {this.props.loggedIn ? <NavLink to="/Profile"><HeaderButton name='PROFILE' /> </NavLink>: <HeaderButton name='LOGIN' onClick={this.toggleLoginModal} />}
                                     {this.props.loggedIn ? <Logout logoutFunc={() => this.logout()} /> : <HeaderButton name='SIGNUP' onClick={this.toggleSignUpModal} />}
                                 </div>
                             </div>
@@ -374,7 +374,9 @@ export default class Header extends React.Component {
                                         : <DropdownItem onClick={this.toggleSignUpModal}>SIGNUP</DropdownItem>
                                     }
                                     {this.props.loggedIn ?
+                                     <NavLink to='/Profile'>
                                         <DropdownItem>PROFILE</DropdownItem>
+                                        </NavLink>
                                         : null
                                     }
                                     {this.props.loggedIn ?
