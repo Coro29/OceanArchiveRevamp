@@ -22,6 +22,7 @@ const createItem_1 = require("./components/createItem");
 const createCollection_1 = require("./components/createCollection");
 const createAnnouncement_1 = require("./components/createAnnouncement");
 const onboardingForm_1 = require("./components/onboardingForm");
+const Profile_1 = require("./components/Profile");
 const search_1 = require("./components/search");
 const Constant = require("./constants");
 document.body.style.backgroundColor = Constant.MAIN_COLOUR;
@@ -131,6 +132,11 @@ class Homepage extends React.Component {
                         return (React.createElement("div", null,
                             React.createElement(header_1.default, { logIn: (x) => this.logIn(x), loggedIn: this.state.loggedIn }),
                             React.createElement(manageAnnouncements_1.default, null)));
+                    } }),
+                React.createElement(react_router_dom_1.Route, { path: "/Profile", render: () => {
+                        return (React.createElement("div", null,
+                            React.createElement(header_1.default, { logIn: (x) => this.logIn(x), loggedIn: this.state.loggedIn }),
+                            React.createElement(Profile_1.default, null)));
                     } }))));
     }
 }
