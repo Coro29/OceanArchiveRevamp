@@ -127,6 +127,7 @@
     <TypeScriptCompile Include="components\onboardingForm.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="components\Profile.tsx" />
     <TypeScriptCompile Include="components\search.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
