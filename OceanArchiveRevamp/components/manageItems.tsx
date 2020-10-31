@@ -223,11 +223,14 @@ export default class ManageItems extends React.Component {
             );
     }
 
-    openModal = (i) => {
-        this.setState({
-            modalOpen: true,
-            editingIndex: i
-        });
+    openModal = (data) => {
+        if (this.state.dataSet != undefined) {
+            var i = this.state.dataSet.indexOf(data);
+            this.setState({
+                modalOpen: true,
+                editingIndex: i
+            });
+        }
     }
 
     deleteItem = () => {
@@ -264,7 +267,7 @@ export default class ManageItems extends React.Component {
                         currentPage * this.itemsPerPage,
                         (currentPage + 1) * this.itemsPerPage
                     ).map((data, i) =>
-                        <ListItem key={i} published={data.published} visible={data.visible} dateCreated="01-Jun-2020" title={data.title} modalOpen={() => this.openModal(i)} />
+                        <ListItem key={i} published={data.published} visible={data.visible} dateCreated="01-Jun-2020" title={data.title} modalOpen={() => this.openModal(data)} />
                     )}
                 </div>
                 <div className='footerMenu'>

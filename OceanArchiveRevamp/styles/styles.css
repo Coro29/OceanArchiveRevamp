@@ -1239,7 +1239,7 @@ hr {
     }
 
 .page-item {
-    background-color: #ffffff;
+    background-color: transparent;
     border: 1px #787878 solid;
     min-width: 24px;
     min-height: 24px;
@@ -1264,12 +1264,12 @@ hr {
         }
 
     .page-item > a:link {
-        color: #000000;
+        color: #ffffff;
         text-decoration: none;
     }
 
     .page-item > a:visited {
-        color: #000000;
+        color: #ffffff;
         text-decoration: none;
     }
 
@@ -1293,13 +1293,13 @@ hr {
     }
 
     .page-item.disabled > a {
-        color: #333333;
+        color: #787878;
         text-decoration: none;
         cursor: default;
     }
 
     .page-item.disabled:hover {
-        background-color: #ffffff;
+        background-color: transparent;
     }
 
 /*Create Item*/
