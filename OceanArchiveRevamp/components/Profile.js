@@ -2,16 +2,39 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require('react');
 const reactstrap_1 = require("reactstrap");
-const profile_png_1 = require("../images/profile.png");
 class Profilepart1 extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (React.createElement(reactstrap_1.Row, null,
-            React.createElement(reactstrap_1.Col, { md: 4 },
-                React.createElement(reactstrap_1.Logo, { img: profile_png_1.default })),
-            React.createElement(reactstrap_1.Col, { md: 4 }, "Hey,Admin")));
+            React.createElement(reactstrap_1.Col, { md: 2 },
+                React.createElement("img", { src: 'https://live.staticflickr.com/2490/4214811049_1264c95738_b.jpg', width: '80%' })),
+            React.createElement(reactstrap_1.Col, { md: 2 },
+                React.createElement(reactstrap_1.FormGroup, null,
+                    React.createElement("h1", null, "Hey Admin"),
+                    React.createElement("br", null),
+                    React.createElement(reactstrap_1.Label, { for: "" }, "First Name"),
+                    React.createElement(reactstrap_1.Input, { type: "text", name: "fname", id: "fname", placeholder: "" }))),
+            React.createElement(reactstrap_1.Col, { md: 2 },
+                React.createElement(reactstrap_1.FormGroup, null,
+                    React.createElement("h1", null),
+                    React.createElement("br", null),
+                    React.createElement(reactstrap_1.Label, { for: "" }, "Last Name"),
+                    React.createElement(reactstrap_1.Input, { type: "text", name: "fname", id: "fname", placeholder: "" }))),
+            React.createElement(reactstrap_1.Col, { md: 3 },
+                React.createElement(reactstrap_1.FormGroup, null,
+                    React.createElement("h1", null),
+                    React.createElement("br", null),
+                    React.createElement(reactstrap_1.Label, { for: "" }, "Email"),
+                    React.createElement(reactstrap_1.Input, { type: "text", name: "fname", id: "fname", placeholder: "" }))),
+            React.createElement(reactstrap_1.Col, { md: 3 },
+                React.createElement(reactstrap_1.FormGroup, null,
+                    React.createElement("br", null),
+                    React.createElement("br", null),
+                    React.createElement("br", null),
+                    React.createElement("br", null),
+                    React.createElement("div", { className: 'profileFooterbtn save' }, "Change Password")))));
     }
 }
 class Profilepart2 extends React.Component {
@@ -49,7 +72,7 @@ class Profilepart3 extends React.Component {
         super(props);
     }
     render() {
-        return (React.createElement("div", { className: 'createItemPage' },
+        return (React.createElement("div", null,
             React.createElement(reactstrap_1.FormGroup, null,
                 React.createElement(reactstrap_1.Label, { for: 'website' }, "Website"),
                 React.createElement(reactstrap_1.Input, { type: 'text', name: 'website', id: 'website' }),
@@ -93,12 +116,16 @@ class Profile extends React.Component {
         };
     }
     render() {
-        return (React.createElement("div", { className: "ICAcontainer" },
+        return (React.createElement("div", { className: "ICAcontainer abc" },
             React.createElement("div", { className: 'listSection' },
-                React.createElement(Profilepart1, null),
-                React.createElement(Profilepart2, null),
-                React.createElement(Profilepart3, null)),
-            React.createElement(Profilefooter, null)));
+                React.createElement("div", { className: 'createItemPage' },
+                    React.createElement(Profilepart1, null),
+                    React.createElement("div", { className: 'profileFooterbtn save' }, "Upload profile picture"),
+                    React.createElement("br", null),
+                    React.createElement("h1", null, "Other Informations:"),
+                    React.createElement(Profilepart2, null),
+                    React.createElement(Profilepart3, null),
+                    React.createElement(Profilefooter, null)))));
     }
 }
 exports.default = Profile;

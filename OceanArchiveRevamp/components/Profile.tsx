@@ -3,10 +3,9 @@ declare var require: any
 var React = require('react');
 
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink, Modal, ModalHeader,Form,
-    FormFeedback,Label,ModalFooter,Input,CustomInput,FormText,Col,Row,Logo,
+    FormFeedback,Label,ModalFooter,Input,CustomInput,FormText,Col,Row,Button,
     FormGroup,} from 'reactstrap';
 
-import Profilepic from '../images/profile.png';
 
 
 class Profilepart1 extends React.Component {
@@ -20,12 +19,50 @@ class Profilepart1 extends React.Component {
 
             
                 <Row>
-                <Col md={4}>
-                    <Logo img={Profilepic} />
+                    <Col md={2}>
+                        <img src='https://live.staticflickr.com/2490/4214811049_1264c95738_b.jpg'  width='80%'></img>
+                    </Col>
+                    
+                    
+                <Col md={2}>
+                <FormGroup>
+                    <h1>Hey Admin</h1>
+                    <br></br>  
+                <Label for="">First Name</Label>
+                <Input type="text" name="fname" id="fname" placeholder="" />
+                </FormGroup>
                 </Col>
-                <Col md={4}>
-                    Hey,Admin
+
+
+                <Col md={2}>
+                <FormGroup>
+                    <h1></h1>
+                    <br></br>
+                <Label for="">Last Name</Label>
+                <Input type="text" name="fname" id="fname" placeholder="" />
+                </FormGroup>
                 </Col>
+
+                <Col md={3}>
+                <FormGroup>
+                    <h1></h1>
+                    <br></br>
+                <Label for="">Email</Label>
+                <Input type="text" name="fname" id="fname" placeholder="" />
+                </FormGroup>
+                </Col>
+
+                <Col md={3}>
+                <FormGroup>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div className='profileFooterbtn save'>Change Password</div>
+                </FormGroup>
+                </Col>
+                       
+
                 </Row>
             
             
@@ -41,7 +78,7 @@ class Profilepart2 extends React.Component {
     render() {
         return (
             
-            <Row  >
+            <Row>
             <Col md={3}>
               <FormGroup>
                 <Label for="">City</Label>
@@ -90,7 +127,7 @@ class Profilepart3 extends React.Component {
 
     render() {
         return (
-            <div className='createItemPage'>
+            <div >
                 <FormGroup>
                     <Label for='website'>Website</Label>
                     <Input type='text' name='website' id='website'  />
@@ -132,7 +169,7 @@ class Profilefooter extends React.Component {
             <div className='profileFooterbtn delete' onClick={this.toggle}>Delete Account</div>
             <div className='fillerBox' />
             <div className='profileFooterbtn save'>Save</div>
-        </ModalFooter>
+            </ModalFooter>
         );
     }
 }
@@ -166,17 +203,21 @@ export default class Profile extends React.Component {
     render() {
         
         return (
-            <div className="ICAcontainer">
+            <div className="ICAcontainer abc">
                 
                 
                 <div className='listSection'>
-                
-                    <Profilepart1 />
+                <div className='createItemPage'>
+                    <Profilepart1 /> 
+                    <div className='profileFooterbtn save'>Upload profile picture</div>
+                    <br></br>
+                    <h1>Other Informations:</h1>
                     <Profilepart2 />
                     <Profilepart3 />
-                
+                    <Profilefooter />
+                    </div>
                 </div>
-                <Profilefooter />
+                
             </div >
         );
     }

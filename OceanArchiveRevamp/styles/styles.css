@@ -2313,12 +2313,18 @@ input.coordInput {
     }
     
         .profileFooterbtn.save {
-            
+            color: #ffffff;
             background-color: #3FB39A;
+        }
+
+        .profileFooterbtn.save.focus {
+            color: #ffffff;
+            background-color: #000000;
         }
     
         .profileFooterbtn.delete {
             background-color: #FF3A3A;
+            color: #ffffff;
         }
 
 
@@ -2329,4 +2335,13 @@ input.coordInput {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.ICAcontainer.abc {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: calc();
+    overflow-y: auto;
+    align-items: center;
 }
