@@ -101,7 +101,7 @@ class ListItem extends React.Component {
                 <div className='listVariableWidth'>{this.props.title}</div>
                 <div className='listVariableWidth'>{this.props.creators}</div>
                 <div className='listFixedWidth'>
-                    <div onClick={this.props.modalOpen}>EDIT</div>
+                    <div className='editbtn' onClick={this.props.modalOpen}>EDIT</div>
                 </div>
             </div>
         );

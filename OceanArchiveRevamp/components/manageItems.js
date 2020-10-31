@@ -64,7 +64,7 @@ class ListItem extends React.Component {
             React.createElement("div", { className: 'listFixedWidth' }, this.props.dateCreated),
             React.createElement("div", { className: 'listVariableWidth' }, this.props.title),
             React.createElement("div", { className: 'listFixedWidth' },
-                React.createElement("div", { onClick: this.props.modalOpen }, "EDIT"))));
+                React.createElement("div", { className: 'editbtn', onClick: this.props.modalOpen }, "EDIT"))));
     }
 }
 class EditModal extends React.Component {

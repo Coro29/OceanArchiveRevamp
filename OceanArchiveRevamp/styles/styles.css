@@ -2409,3 +2409,15 @@ input.coordInput {
 .special:hover{
     color: #ffffffe5;
 }
+
+.editbtn{
+    height:25px;
+    color: #ffffff;
+    background-color: #3FB39A;
+    border-radius: 5px;
+}
+
+.editbtn:hover
+{
+    background-color: #2c8874;
+}
