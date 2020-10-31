@@ -2021,6 +2021,11 @@ input.coordInput {
         background-color: #4A74A5;
     }
 
+    .advSearchKeywordsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
 .advSearchSecKeyword {
     display: flex;
     margin: 7px 0px;
@@ -2029,7 +2034,6 @@ input.coordInput {
 }
 
     .advSearchSecKeyword > div, .advSearchSecKeyword > input {
-        flex: 0 0 auto;
         max-height: 40px;
         min-height: 40px;
     }
@@ -2193,8 +2197,8 @@ input.coordInput {
     }
 
 .createCollectionItemImg {
-    height: 75px;
-    width: 75px;
+    height: 73px;
+    width: 73px;
     flex: 0 0 auto;
     border: 1px #ffffff solid;
     border-collapse: collapse;
