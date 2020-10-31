@@ -2,7 +2,11 @@ declare var require: any
 
 var React = require('react');
 
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink, Modal, ModalHeader } from 'reactstrap';
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink, Modal, ModalHeader,Form,
+    FormFeedback,Label,ModalFooter,Input,CustomInput,FormText,Col,Row,Logo,
+    FormGroup,} from 'reactstrap';
+
+import Profilepic from '../images/profile.png';
 
 
 class Profilepart1 extends React.Component {
@@ -12,16 +16,126 @@ class Profilepart1 extends React.Component {
 
     render() {
         return (
-            <div className='listItemContainer row' style={{ fontWeight: 'bold' }}>
-                <div className='col-md-3'>profile pictures</div>
-                <div className='col-md-3'>First Name</div>
-                <div className='col-md-3'>Last Name</div>
-                <div className='col-md-3'>change password</div>
+
+
+            
+                <Row>
+                <Col md={4}>
+                    <Logo img={Profilepic} />
+                </Col>
+                <Col md={4}>
+                    Hey,Admin
+                </Col>
+                </Row>
+            
+            
+        );
+    }
+}
+
+class Profilepart2 extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            
+            <Row  >
+            <Col md={3}>
+              <FormGroup>
+                <Label for="">City</Label>
+                <Input type="text" name="city" id="city" placeholder="" />
+                <br></br>
+                <br></br>
+                <br></br>
+                <Label for="">Country</Label>
+                <Input type="text" name="country" id="country" placeholder="" />
+              </FormGroup>
+            </Col>
+            <Col md={3}>
+              <FormGroup>
+                <Label for="">Field of Experties</Label>
+                <Input type="password" name="field" id="field" placeholder=""/>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Label for="">Position</Label>
+                <Input type="text" name="position" id="position" placeholder=""/>
+              </FormGroup>
+            </Col>
+            <Col md={6}>
+                <FormGroup>
+                    <Label for='Biography'>Biography</Label>
+                    <Input type='textarea' name='dBiographyesc' id='Biography' placeholder="" />
+                </FormGroup>
+            </Col>
+          </Row>
+         
+
+
+
+
+        );
+    }
+}
+
+
+
+
+class Profilepart3 extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className='createItemPage'>
+                <FormGroup>
+                    <Label for='website'>Website</Label>
+                    <Input type='text' name='website' id='website'  />
+                    <FormText color="muted">* Website URL must start with http:// or https://</FormText>
+                </FormGroup>
+                <FormGroup>
+                    <Label for='socialmedia'>Social Media (URL)</Label>
+                    <Input type='text' name='subtitle' id='subtitle'  /> 
+                    <FormText color="muted">* All URL's must start with http:// or https://</FormText>
+                </FormGroup>
+                <FormGroup>
+                    <Label for='affiliation'>Affiliation</Label>
+                    <Input type='text' name='affiliation' id='affiliation'  />
+                </FormGroup>
+                <FormGroup>
+                    <CustomInput type="switch" id="exampleCustomSwitch" name="customSwitch" label="Make my profile public" />
+                    <FormText color="muted">By enabling this you accept that all your information will be viewable by the general public.</FormText>
+                </FormGroup>
             </div>
         );
     }
 }
 
+
+          
+
+
+
+
+
+class Profilefooter extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <ModalFooter className='profileFooter'>
+            <div className='profileFooterbtn delete' onClick={this.toggle}>Delete Account</div>
+            <div className='fillerBox' />
+            <div className='profileFooterbtn save'>Save</div>
+        </ModalFooter>
+        );
+    }
+}
 
 
 
@@ -38,10 +152,6 @@ export default class Profile extends React.Component {
         });
     }
 
-
-
-
-
     openModal = (i) => {
         this.setState({
             modalOpen: true,
@@ -49,28 +159,24 @@ export default class Profile extends React.Component {
         });
     }
 
-    deleteItem = () => {
-        var dataSet = this.state.dataSet;
-        dataSet.splice(this.state.editingIndex, 1);
-        this.setState({
-            dataSet: dataSet,
-            modalOpen: false
-        });
-    }
+
 
 
 
     render() {
-        const { currentPage } = this.state;
+        
         return (
             <div className="ICAcontainer">
-                <h1>My porfile</h1>
+                
                 
                 <div className='listSection'>
+                
                     <Profilepart1 />
-
+                    <Profilepart2 />
+                    <Profilepart3 />
+                
                 </div>
-
+                <Profilefooter />
             </div >
         );
     }
