@@ -60,9 +60,10 @@ export default class CreateAnnouncement extends React.Component {
     render() {
         return (
             
-         
-            <div className='createAnnouncementPage'>
-                 Create Announcement
+            <div className="ICAcontainer abc">
+                <h1>Create Announcement</h1>
+            <div className='createItemPage'>
+                 
               <div className='announcementDetails'>
                 <FormGroup>
                     <Label for='title'>Title</Label>
@@ -90,6 +91,7 @@ export default class CreateAnnouncement extends React.Component {
                 
                 </div>
              
+            </div>
             </div>
             </div>
         );

@@ -42,8 +42,8 @@ class LoginModal extends React.Component {
                     React.createElement("input", { className: 'whiteText', type: 'password', id: 'passwrd', name: 'password' }))),
             React.createElement(reactstrap_1.ModalFooter, null,
                 React.createElement(reactstrap_1.Button, { className: 'modalButton', onClick: this.props.loginFunc }, "LOGIN"),
-                React.createElement("div", { className: 'modalCenteredLink' },
-                    React.createElement("a", { className: 'speical', href: 'https://www.google.com' }, "Forgot password?")))));
+                React.createElement("div", { className: 'modalCenteredLink ' },
+                    React.createElement("a", { href: 'https://www.google.com' }, "Forgot password?")))));
     }
 }
 class SignUpModal extends React.Component {
@@ -93,15 +93,15 @@ class SignUpModal extends React.Component {
                     React.createElement("div", { style: { height: '20px' } }),
                     React.createElement("div", { style: { display: 'flex' } },
                         React.createElement("input", { className: 'checkBox', type: 'checkbox', id: 'termsAndConditions', name: 'termsAndConditions', value: 'TAC' }),
-                        React.createElement("label", { className: 'checkBoxLabel', for: 'termsAndConditions' },
+                        React.createElement("label", { className: 'checkBoxLabel special', for: 'termsAndConditions' },
                             "I agree to the ",
                             React.createElement("a", { href: 'https://www.google.com' }, "Terms and Condtitions"))),
                     React.createElement("div", { style: { height: '20px' } }),
                     React.createElement("div", { style: { display: 'flex' } },
                         React.createElement("input", { className: 'checkBox', type: 'checkbox', id: 'mailList', name: 'mailList', value: 'mList' }),
                         React.createElement("label", { className: 'checkBoxLabel', for: 'mailList' }, "Join mailing list")),
-                    React.createElement("p", null,
-                        "By joining the mailing list you acknowledge that your information will be transferred to Mailchimp for processing. Learn more about Mailchimp's privacy practices ",
+                    React.createElement("p", { className: 'special' },
+                        " By joining the mailing list you acknowledge that your information will be transferred to Mailchimp for processing. Learn more about Mailchimp's privacy practices ",
                         React.createElement("a", { href: 'https://www.google.com' }, "here"),
                         "."))),
             React.createElement(reactstrap_1.ModalFooter, null,
@@ -109,7 +109,7 @@ class SignUpModal extends React.Component {
                 React.createElement("div", { className: 'modalCenteredLink' },
                     React.createElement("p", null,
                         "Already have an account? ",
-                        React.createElement("a", { className: 'speical', href: 'https://www.google.com' }, "Sign In"))))));
+                        React.createElement("a", { href: 'https://www.google.com' }, "Sign In"))))));
     }
 }
 class Contribute extends React.Component {

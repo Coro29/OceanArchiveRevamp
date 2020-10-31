@@ -490,3 +490,23 @@ export const languages = [
     { value: 'PRS', label: 'Dari' },
     { value: 'GD', label: 'Scottish Gaelic' }
 ];
+
+
+export const license = [
+    { value: 'CC BY (Least Restrictive)', label: 'CC BY (Least Restrictive)' },
+    { value: 'CC BY-SA', label: 'CC BY-SA' },
+    { value: 'CC BY-ND', label: 'CC BY-ND' },
+    { value: 'CC BY-NC', label: 'CC BY-NC' },
+    { value: 'CC BY-NC-SA', label: 'CC BY-NC-SA' },
+    { value: 'CC BY-NC-ND (Most Restrictive CC)', label: 'CC BY-NC-ND (Most Restrictive CC)' },
+    { value: 'Ocean Archive (Most Restrictive)', label: 'Ocean Archive (Most Restrictive)' },
+    
+  ];
+
+  export const cat = [
+    { value: 'Other', label: 'Other' },
+    { value: 'painting', label: 'painting' },
+    { value: 'video', label: 'video' },
+   
+    
+  ];

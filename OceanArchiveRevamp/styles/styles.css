@@ -44,22 +44,22 @@ h2 {
 }
 
 a:link {
-    color: #3FB39A;
+    color: #ffffff;
     text-decoration: none;
 }
 
 a:visited {
-    color: #2c8874;
+    color: #ffffff;
     text-decoration: none;
 }
 
 a:hover {
-    color: #236e5e;
+    color: #ffffffce;
     text-decoration: none;
 }
 
 a:active {
-    color: #40c2a6;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -2402,12 +2402,21 @@ input.coordInput {
     align-items: center;
 }
 
-.special{
-    color: #ffffff;
+.special > a:active {
+    color: #3FB39A; 
+}
+.special > a:link {
+    color: #3FB39A; 
 }
 
-.special:hover{
-    color: #ffffffe5;
+.special > a:visited {
+    color: #3FB39A;
+   
+}
+
+.special > a:hover {
+    color: #2c8874;
+   
 }
 
 .editbtn{
@@ -2421,3 +2430,5 @@ input.coordInput {
 {
     background-color: #2c8874;
 }
+
+

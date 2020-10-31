@@ -20,6 +20,8 @@ import {
 import Select from 'react-select';
 import GoogleMapReact from 'google-map-react';
 
+
+
 let Draggable = require('react-draggable');
 
 
@@ -206,11 +208,12 @@ class CategoryAndTagsPage extends React.Component {
                 </FormGroup>
                 <FormGroup>
                     <Label for='cat'>Object Category</Label>
-                    <Input type='select' name='cat'>
+                    {/* <Input type='select' name='cat'>
                         <option>Other</option>
                         <option>painting</option>
                         <option>video</option>
-                    </Input>
+                    </Input> */}
+                    <Select className='react-select-contianer' classNamePrefix='react-select' options={Constant.cat}  value={Constant.cat.value}/>
                 </FormGroup>
                 <div style={{ height: '24px' }} />
                 Tags
@@ -260,7 +263,7 @@ class RegionAndLegalPage extends React.Component {
                 <hr />
                 <FormGroup>
                     <Label for='license'>License</Label>
-                    <Input type='select' name='license'>
+                    {/* <Input type='select' name='license'>
                         <option>CC BY (Least Restrictive)</option>
                         <option>CC BY-SA</option>
                         <option>CC BY-ND</option>
@@ -268,7 +271,10 @@ class RegionAndLegalPage extends React.Component {
                         <option>CC BY-NC-SA</option>
                         <option>CC BY-NC-ND (Most Restrictive CC)</option>
                         <option>Ocean Archive (Most Restrictive)</option>
-                    </Input>
+                    </Input> */}
+               
+                    <Select className='react-select-contianer' classNamePrefix='react-select' options={Constant.license}  value={Constant.license.value}/>
+
                 </FormGroup>
                 <FormGroup>
                     <Label for='copyr'>Copyright Owner (optional)</Label>
