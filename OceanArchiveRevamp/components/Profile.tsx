@@ -3,7 +3,7 @@ declare var require: any
 var React = require('react');
 
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink, Modal, ModalHeader,Form,
-    FormFeedback,Label,ModalFooter,Input,CustomInput,FormText,Col,Row,Button,
+    FormFeedback,Label,ModalFooter,Input,CustomInput,FormText,Col,Row,
     FormGroup,} from 'reactstrap';
 
 
@@ -117,9 +117,6 @@ class Profilepart2 extends React.Component {
     }
 }
 
-
-
-
 class Profilepart3 extends React.Component {
     constructor(props) {
         super(props);
@@ -143,20 +140,16 @@ class Profilepart3 extends React.Component {
                     <Input type='text' name='affiliation' id='affiliation'  />
                 </FormGroup>
                 <FormGroup>
-                    <CustomInput type="switch" id="exampleCustomSwitch" name="customSwitch" label="Make my profile public" />
+                <div style={{ display: 'flex' }}>
+                    <input className='checkBox' type='checkbox' id='' name='' value='TAC' />
+                    <label className='checkBoxLabel' for='termsAndConditions'>Make my profile public</label>
+                    </div>
                     <FormText color="muted">By enabling this you accept that all your information will be viewable by the general public.</FormText>
                 </FormGroup>
             </div>
         );
     }
 }
-
-
-          
-
-
-
-
 
 class Profilefooter extends React.Component {
     constructor(props) {
@@ -177,25 +170,12 @@ class Profilefooter extends React.Component {
 
 
 
+
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
 
     }
-
-    toggleModal = () => {
-        this.setState({
-            modalOpen: !this.state.modalOpen
-        });
-    }
-
-    openModal = (i) => {
-        this.setState({
-            modalOpen: true,
-            editingIndex: i
-        });
-    }
-
 
 
 

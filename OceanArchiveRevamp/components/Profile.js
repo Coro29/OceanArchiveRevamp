@@ -85,7 +85,9 @@ class Profilepart3 extends React.Component {
                 React.createElement(reactstrap_1.Label, { for: 'affiliation' }, "Affiliation"),
                 React.createElement(reactstrap_1.Input, { type: 'text', name: 'affiliation', id: 'affiliation' })),
             React.createElement(reactstrap_1.FormGroup, null,
-                React.createElement(reactstrap_1.CustomInput, { type: "switch", id: "exampleCustomSwitch", name: "customSwitch", label: "Make my profile public" }),
+                React.createElement("div", { style: { display: 'flex' } },
+                    React.createElement("input", { className: 'checkBox', type: 'checkbox', id: '', name: '', value: 'TAC' }),
+                    React.createElement("label", { className: 'checkBoxLabel', for: 'termsAndConditions' }, "Make my profile public")),
                 React.createElement(reactstrap_1.FormText, { color: "muted" }, "By enabling this you accept that all your information will be viewable by the general public."))));
     }
 }
@@ -103,17 +105,6 @@ class Profilefooter extends React.Component {
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        this.toggleModal = () => {
-            this.setState({
-                modalOpen: !this.state.modalOpen
-            });
-        };
-        this.openModal = (i) => {
-            this.setState({
-                modalOpen: true,
-                editingIndex: i
-            });
-        };
     }
     render() {
         return (React.createElement("div", { className: "ICAcontainer abc" },

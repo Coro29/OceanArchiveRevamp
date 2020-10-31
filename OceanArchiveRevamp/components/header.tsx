@@ -62,7 +62,7 @@ class LoginModal extends React.Component {
                 <ModalFooter>
                     <Button className='modalButton' onClick={this.props.loginFunc}>LOGIN</Button>
                     <div className='modalCenteredLink'>
-                        <a href='https://www.google.com'>Forgot password?</a>
+                        <a className='speical' href='https://www.google.com' >Forgot password?</a>
                     </div>
                 </ModalFooter>
             </Modal>
@@ -126,20 +126,20 @@ class SignUpModal extends React.Component {
                         <div style={{ height: '20px' }} />
                         <div style={{ display: 'flex' }}>
                             <input className='checkBox' type='checkbox' id='termsAndConditions' name='termsAndConditions' value='TAC' />
-                            <label className='checkBoxLabel' for='termsAndConditions'>I agree to the <a href='https://www.google.com'>Terms and Condtitions</a></label>
+                            <label className='checkBoxLabel' for='termsAndConditions'>I agree to the <a href='https://www.google.com' >Terms and Condtitions</a></label>
                         </div>
                         <div style={{ height: '20px' }} />
                         <div style={{ display: 'flex' }}>
                             <input className='checkBox' type='checkbox' id='mailList' name='mailList' value='mList' />
                             <label className='checkBoxLabel' for='mailList'>Join mailing list</label>
                         </div>
-                        <p>By joining the mailing list you acknowledge that your information will be transferred to Mailchimp for processing. Learn more about Mailchimp's privacy practices <a href='https://www.google.com'>here</a>.</p>
+                        <p>By joining the mailing list you acknowledge that your information will be transferred to Mailchimp for processing. Learn more about Mailchimp's privacy practices <a  href='https://www.google.com'>here</a>.</p>
                     </form>
                 </ModalBody>
                 <ModalFooter>
                     <Button className='modalButton' onClick={this.props.toggle}>SIGN UP</Button>
                     <div className='modalCenteredLink'>
-                        <p>Already have an account? <a href='https://www.google.com'>Sign In</a></p>
+                        <p>Already have an account? <a className='speical' href='https://www.google.com'>Sign In</a></p>
                     </div>
                 </ModalFooter>
             </Modal>

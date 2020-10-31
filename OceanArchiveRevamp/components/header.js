@@ -43,7 +43,7 @@ class LoginModal extends React.Component {
             React.createElement(reactstrap_1.ModalFooter, null,
                 React.createElement(reactstrap_1.Button, { className: 'modalButton', onClick: this.props.loginFunc }, "LOGIN"),
                 React.createElement("div", { className: 'modalCenteredLink' },
-                    React.createElement("a", { href: 'https://www.google.com' }, "Forgot password?")))));
+                    React.createElement("a", { className: 'speical', href: 'https://www.google.com' }, "Forgot password?")))));
     }
 }
 class SignUpModal extends React.Component {
@@ -109,7 +109,7 @@ class SignUpModal extends React.Component {
                 React.createElement("div", { className: 'modalCenteredLink' },
                     React.createElement("p", null,
                         "Already have an account? ",
-                        React.createElement("a", { href: 'https://www.google.com' }, "Sign In"))))));
+                        React.createElement("a", { className: 'speical', href: 'https://www.google.com' }, "Sign In"))))));
     }
 }
 class Contribute extends React.Component {

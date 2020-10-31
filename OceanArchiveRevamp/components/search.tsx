@@ -275,7 +275,7 @@ class AdvancedSearchModal extends React.Component {
                         <ModalFooter className='advSearchFooter'>
                             <div className='advSearchModalButton cancel' onClick={this.toggle}>CANCEL</div>
                             <div className='fillerBox' />
-                            <div className='advSearchModalButton search'>SEARCH</div>
+                            <div  className='advSearchModalButton search'>SEARCH</div>
                         </ModalFooter>
                     </Form>
                 </Modal>
