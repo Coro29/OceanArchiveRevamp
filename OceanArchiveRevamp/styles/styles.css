@@ -754,8 +754,7 @@ hr {
 .ICAcontainer {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    height: calc();
+    padding: 0px 20px;
     overflow-y: auto;
 }
 
@@ -2397,13 +2396,12 @@ input.coordInput {
   margin-left: auto;
 }
 
-.ICAcontainer.abc {
+.profileContainer {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    height: calc();
     overflow-y: auto;
-    align-items: center;
+    max-width: 75vw;
+    margin: 16px auto 0px auto;
 }
 
 .special > a:active {
@@ -2433,6 +2431,10 @@ input.coordInput {
 .editbtn:hover
 {
     background-color: #2c8874;
+}
+
+.profileFooterbtn.photo.save {
+    width: 250px;
 }
 
 
