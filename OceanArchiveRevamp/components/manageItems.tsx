@@ -131,7 +131,7 @@ class EditModal extends React.Component {
         if (this.props.data != undefined)
             return (
                 <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
-                    <ModalHeader>Edit - {this.props.data.title}</ModalHeader>
+                    <ModalHeader>Manage Item - {this.props.data.title}</ModalHeader>
                     {this.state.confirmDelete ?
                         <div className='manageModalOuter'>
                             <div>Delete this item?</div>

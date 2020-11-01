@@ -88,7 +88,7 @@ class EditModal extends React.Component {
         if (this.props.data != undefined)
             return (React.createElement(reactstrap_1.Modal, { isOpen: this.props.isOpen, toggle: this.props.toggle },
                 React.createElement(reactstrap_1.ModalHeader, null,
-                    "Edit - ",
+                    "Manage Item - ",
                     this.props.data.title),
                 this.state.confirmDelete ?
                     React.createElement("div", { className: 'manageModalOuter' },

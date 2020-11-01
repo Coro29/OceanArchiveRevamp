@@ -90,7 +90,7 @@ class EditModal extends React.Component {
         if (this.props.data != undefined)
             return (React.createElement(reactstrap_1.Modal, { isOpen: this.props.isOpen, toggle: this.props.toggle },
                 React.createElement(reactstrap_1.ModalHeader, null,
-                    "Edit - ",
+                    "Manage Announcement - ",
                     this.props.data.title),
                 this.state.confirmDelete ?
                     React.createElement("div", { className: 'manageModalOuter' },
@@ -135,11 +135,14 @@ class ManageItems extends React.Component {
                 return (this.pages.map((i) => React.createElement(reactstrap_1.PaginationItem, { active: i === this.state.currentPage + 1, key: i },
                     React.createElement(reactstrap_1.PaginationLink, { onClick: () => this.switchPage(i - 1), href: '#' }, i))));
         };
-        this.openModal = (i) => {
-            this.setState({
-                modalOpen: true,
-                editingIndex: i
-            });
+        this.openModal = (data) => {
+            if (this.state.dataSet != undefined) {
+                var i = this.state.dataSet.indexOf(data);
+                this.setState({
+                    modalOpen: true,
+                    editingIndex: i
+                });
+            }
         };
         this.deleteItem = () => {
             var dataSet = this.state.dataSet;
@@ -187,7 +190,7 @@ class ManageItems extends React.Component {
             React.createElement(SearchBar, null),
             React.createElement("div", { className: 'listSection' },
                 React.createElement(ListHeader, null),
-                this.state.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, visible: data.visible, dateCreated: "01-Jun-2020", title: data.title, creators: 'Territorial Agency', modalOpen: () => this.openModal(i) }))),
+                this.state.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, visible: data.visible, dateCreated: "01-Jun-2020", title: data.title, creators: 'Territorial Agency', modalOpen: () => this.openModal(data) }))),
             React.createElement("div", { className: 'footerMenu' },
                 React.createElement("div", { className: 'fillerBox' }),
                 React.createElement(reactstrap_1.Pagination, null,
