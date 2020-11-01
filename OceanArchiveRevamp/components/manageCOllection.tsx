@@ -134,10 +134,10 @@ class EditModal extends React.Component {
                     <ModalHeader>Manage Collection - {this.props.data.title}</ModalHeader>
                     {this.state.confirmDelete ?
                         <div className='manageModalOuter'>
-                            <div>Delete this item?</div>
+                            <div>Delete this collection?</div>
                             <div className='manageDeleteButtons'>
                                 <div className='cancelDeleteButton' onClick={() => this.setDelete(false)}>Cancel</div>
-                                <div className='confirmDeleteButton' onClick={() => this.delete()}>Yes, delete item</div>
+                                <div className='confirmDeleteButton' onClick={() => this.delete()}>Yes, delete collection</div>
                             </div>
                         </div> :
                         <div className='manageModalOuter'>

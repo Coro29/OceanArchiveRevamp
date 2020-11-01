@@ -94,10 +94,10 @@ class EditModal extends React.Component {
                     this.props.data.title),
                 this.state.confirmDelete ?
                     React.createElement("div", { className: 'manageModalOuter' },
-                        React.createElement("div", null, "Delete this item?"),
+                        React.createElement("div", null, "Delete this Announcement?"),
                         React.createElement("div", { className: 'manageDeleteButtons' },
                             React.createElement("div", { className: 'cancelDeleteButton', onClick: () => this.setDelete(false) }, "Cancel"),
-                            React.createElement("div", { className: 'confirmDeleteButton', onClick: () => this.delete() }, "Yes, delete item"))) :
+                            React.createElement("div", { className: 'confirmDeleteButton', onClick: () => this.delete() }, "Yes, delete Announcement"))) :
                     React.createElement("div", { className: 'manageModalOuter' },
                         React.createElement("div", { className: 'manageModalButton', onClick: () => this.props.hideItem(!this.props.data.visible) }, this.props.data.visible ? 'Hide' : 'Show'),
                         React.createElement("div", { className: 'manageModalButton', onClick: () => this.setDelete(true) }, "Delete"))));
