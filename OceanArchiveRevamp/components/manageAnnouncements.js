@@ -36,7 +36,7 @@ class ListHeader extends React.Component {
             React.createElement("div", { className: 'listFixedWidth' }, "Visible"),
             React.createElement("div", { className: 'listFixedWidth' }, "Created Date"),
             React.createElement("div", { className: 'listVariableWidth' }, "Title"),
-            React.createElement("div", { className: 'listVariableWidth' }, "Creator(s)"),
+            
             React.createElement("div", { className: 'listFixedWidth' }, "Options")));
     }
 }
@@ -64,7 +64,7 @@ class ListItem extends React.Component {
                         React.createElement("line", { x1: '25', y1: '5', x2: '5', y2: '25', strokeLinecap: 'round' })))),
             React.createElement("div", { className: 'listFixedWidth' }, this.props.dateCreated),
             React.createElement("div", { className: 'listVariableWidth' }, this.props.title),
-            React.createElement("div", { className: 'listVariableWidth' }, this.props.creators),
+            
             React.createElement("div", { className: 'listFixedWidth' },
                 React.createElement("div", { className: 'editbtn', onClick: this.props.modalOpen }, "EDIT"))));
     }
@@ -190,7 +190,7 @@ class ManageItems extends React.Component {
             React.createElement(SearchBar, null),
             React.createElement("div", { className: 'listSection' },
                 React.createElement(ListHeader, null),
-                this.state.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, visible: data.visible, dateCreated: "01-Jun-2020", title: data.title, creators: 'Territorial Agency', modalOpen: () => this.openModal(data) }))),
+                this.state.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, visible: data.visible, dateCreated: "01-Jun-2020", title: data.title,  modalOpen: () => this.openModal(data) }))),
             React.createElement("div", { className: 'footerMenu' },
                 React.createElement("div", { className: 'fillerBox' }),
                 React.createElement(reactstrap_1.Pagination, null,
