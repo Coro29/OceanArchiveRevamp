@@ -2138,6 +2138,9 @@ input.coordInput {
     line-height: 40px;
 }
 
+.cancelDeleteButton:hover{
+    background-color: #1a3349;
+}
 .confirmDeleteButton {
     background-color: #FF3A3A;
     flex: 1 1 0px;
@@ -2148,6 +2151,22 @@ input.coordInput {
     line-height: 40px;
 }
 
+.confirmDeleteButton:hover{
+    background-color: #c02b2b;
+}
+
+.confirmpassword{
+    background-color: #3FB39A;
+    flex: 1 1 0px;
+    margin: 0px 16px;
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+.confirmpassword:hover{
+    background-color: #2c8874;
+}
 /*Create Collection*/
 .listItemPage.createCollection {
     height: calc(100vh - 520px);

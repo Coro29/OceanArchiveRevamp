@@ -32,9 +32,30 @@ class ChangePasswordModal extends React.Component {
 
     render() {
         return (
-            <Modal className='largeModal' isOpen={this.props.isOpen} toggle={this.toggle}>
+            <Modal  isOpen={this.props.isOpen} toggle={this.toggle}>
                 <ModalHeader>CHANGE PASSWORD</ModalHeader>
-                
+                <div className='manageModalOuter'>
+                            <div>Change Password</div>
+                            <div className='manageDeleteButtons'>
+                            <FormGroup>
+                                <Label for='oldpw'>Old Password</Label>
+                                <Input type='text' name='oldpw' id='oldpw'/>
+
+                                <Label for='oldpw'>Repeat the Old Password</Label>
+                                <Input type='text' name='oldpw' id='oldpw'/> 
+
+                                <Label for='newpw'>New Password</Label>
+                                <Input type='text' name='newpw' id='newpw'/> 
+
+                                <Label for='newpw'>Repeat New Password</Label>
+                                <Input type='text' name='newpw' id='newpw'/> 
+
+                                <div className='cancelDeleteButton' >Cancel</div>
+                                <div className='confirmpassword'>Confirm change password</div>                        
+                    </FormGroup>
+                                
+                            </div>
+                        </div>
             </Modal>
         );
     }
@@ -62,9 +83,18 @@ class DeleteAccountModal extends React.Component {
 
     render() {
         return (
-            <Modal className='largeModal' isOpen={this.props.isOpen} toggle={this.toggle}>
+            <Modal  isOpen={this.props.isOpen} toggle={this.toggle}>
                 <ModalHeader>DELETE ACCOUNT</ModalHeader>
-                
+               
+                        <div className='manageModalOuter'>
+                            <div>Delete this account?</div>
+                            <div className='manageDeleteButtons'>
+                                <div className='cancelDeleteButton' onClick={() => this.setDelete(false)}>Cancel</div>
+                                <div className='confirmDeleteButton' onClick={() => this.delete()}>Yes, delete this account</div>
+                            </div>
+                        </div> 
+
+                    
             </Modal>
         );
     }
