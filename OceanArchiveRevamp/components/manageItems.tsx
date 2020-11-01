@@ -30,7 +30,7 @@ class SearchBar extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu className='altDropdownMenu'>
                         <DropdownItem onClick={() => this.switchSearch('Title')}>Title</DropdownItem>
-
+                        <DropdownItem onClick={() => this.switchSearch('Creator')}>Creator</DropdownItem>
                     </DropdownMenu>
                 </ButtonDropdown>
                 <input type='search' className='altSearchBar' placeholder='Search My Item' />
@@ -52,6 +52,7 @@ class ListHeader extends React.Component {
                 <div className='listFixedWidth'>Visible</div>
                 <div className='listFixedWidth'>Created Date</div>
                 <div className='listVariableWidth'>Title</div>
+                <div className='listVariableWidth'>Creator(s)</div>
                 <div className='listFixedWidth'>Options</div>
             </div>
         );
@@ -98,7 +99,7 @@ class ListItem extends React.Component {
                 }</div>
                 <div className='listFixedWidth'>{this.props.dateCreated}</div>
                 <div className='listVariableWidth'>{this.props.title}</div>
-
+                <div className='listVariableWidth'>{this.props.creators}</div>
                 <div className='listFixedWidth'>
                     <div className='editbtn' onClick={this.props.modalOpen}>EDIT</div>
                 </div>
@@ -267,7 +268,7 @@ export default class ManageItems extends React.Component {
                         currentPage * this.itemsPerPage,
                         (currentPage + 1) * this.itemsPerPage
                     ).map((data, i) =>
-                        <ListItem key={i} published={data.published} visible={data.visible} dateCreated="01-Jun-2020" title={data.title} modalOpen={() => this.openModal(data)} />
+                        <ListItem key={i} published={data.published} visible={data.visible} dateCreated="01-Jun-2020" creators='Territorial Agency' title={data.title} modalOpen={() => this.openModal(data)} />
                     )}
                 </div>
                 <div className='footerMenu'>
