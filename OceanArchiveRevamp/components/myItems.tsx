@@ -3,7 +3,7 @@
 var React = require('react');
 
 import { NavLink } from 'react-router-dom';
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink ,Modal, ModalHeader} from 'reactstrap';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -85,9 +85,54 @@ class ListItem extends React.Component {
                 <div className='listFixedWidth'>{this.props.dateCreated}</div>
                 <div className='listVariableWidth'>{this.props.title}</div>
                 <div className='listVariableWidth'>{this.props.creators}</div>
-                <div className='listFixedWidth'>EDIT</div>
+                <div className='listFixedWidth'>
+                        <div className='editbtn' onClick={this.props.modalOpen}>EDIT</div>
+                </div>
             </div>
         );
+    }
+}
+class EditModal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: this.props.data,
+            confirmDelete: false
+        }
+    }
+
+    setDelete = (confirmDelete) => {
+        this.setState({
+            confirmDelete: confirmDelete
+        });
+    }
+
+    delete = () => {
+        this.props.deleteItem();
+        this.setDelete(false);
+    }
+
+    render() {
+        if (this.props.data != undefined)
+            return (
+                <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
+                    <ModalHeader>EDIT - {this.props.data.title}</ModalHeader>
+                    {this.state.confirmDelete ?
+                        <div className='manageModalOuter'>
+                            <div>Delete this item?</div>
+                            <div className='manageDeleteButtons'>
+                                <div className='cancelDeleteButton' onClick={() => this.setDelete(false)}>Cancel</div>
+                                <div className='confirmDeleteButton' onClick={() => this.delete()}>Yes, delete item</div>
+                            </div>
+                        </div> :
+                        <div className='manageModalOuter'>
+                            <div className='manageModalButton' onClick={() => this.props.hideItem(!this.props.data.visible)}>{this.props.data.visible ? 'Hide' : 'Show'}</div>
+                            <div className='manageModalButton' onClick={() => this.setDelete(true)}>Delete</div>
+                        </div>
+                    }
+                </Modal>
+            );
+        else return (null);
     }
 }
 
@@ -111,7 +156,10 @@ export default class MyItems extends React.Component {
         }
 
         this.state = {
-            currentPage: 0
+            currentPage: 0,
+            modalOpen: false,
+            editingIndex: -1,
+            dataSet: this.dataSet
         }
     }
 
@@ -121,6 +169,11 @@ export default class MyItems extends React.Component {
             this.setState({
                 currentPage: index
             });
+    }
+    toggleModal = () => {
+        this.setState({
+            modalOpen: !this.state.modalOpen
+        });
     }
 
     pageGroup = (centerPage) => {
@@ -153,11 +206,41 @@ export default class MyItems extends React.Component {
                 )
             );
     }
+    openModal = (data) => {
+        if (this.state.dataSet != undefined) {
+            var i = this.state.dataSet.indexOf(data);
+            this.setState({
+                modalOpen: true,
+                editingIndex: i
+            });
+        }
+    }
 
+    deleteItem = () => {
+        var dataSet = this.state.dataSet;
+        dataSet.splice(this.state.editingIndex, 1);
+        this.setState({
+            dataSet: dataSet,
+            modalOpen: false
+        });
+    }
+
+    hideItem = (visible) => {
+        console.log(visible);
+        if (this.state.dataSet != undefined && this.state.editingIndex >= 0) {
+            var dataSet = this.state.dataSet;
+            dataSet[this.state.editingIndex].visible = visible;
+            this.setState({
+                dataSet: dataSet,
+                modalOpen: false
+            });
+        }
+    }
     render() {
         const { currentPage } = this.state;
         return (
             <div className="ICAcontainer">
+                <EditModal isOpen={this.state.modalOpen} toggle={() => this.toggleModal()} data={this.state.dataSet[this.state.editingIndex]} deleteItem={() => this.deleteItem()} hideItem={(v) => this.hideItem(v)} />
                 <h1>MY ITEMS</h1>
                 <SearchBar />
                 <div className='listSection'>
@@ -166,7 +249,7 @@ export default class MyItems extends React.Component {
                         currentPage * this.itemsPerPage,
                         (currentPage + 1) * this.itemsPerPage
                     ).map((data, i) =>
-                        <ListItem key={i} published={true} dateCreated="02-Jun-2020" title={data} creators='Territorial Agency' />
+                        <ListItem key={i} published={data.published} dateCreated="02-Jun-2020" title={data} creators='Territorial Agency' modalOpen={() => this.openModal(data)}/>
                     )}
                 </div>
                 <div className='footerMenu'>

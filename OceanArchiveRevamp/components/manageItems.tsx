@@ -33,7 +33,7 @@ class SearchBar extends React.Component {
 
                     </DropdownMenu>
                 </ButtonDropdown>
-                <input type='search' className='altSearchBar' placeholder='Search My Announcements' />
+                <input type='search' className='altSearchBar' placeholder='Search My Item' />
                 <input type='submit' className='altSearchButton' value='Search' />
             </form>
         );
