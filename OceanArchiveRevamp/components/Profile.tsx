@@ -106,7 +106,7 @@ export default class Profile extends React.Component {
                             <h1>Hey Admin</h1>
                             <br></br>
                             <Label for="">First Name</Label>
-                            <Input type="text" name="fname" id="fname" placeholder="" />
+                            <Input type="text" name="fname" id="fname" value = "Yap" placeholder="" />
                         </FormGroup>
                     </Col>
                     <Col md={2}>
@@ -114,7 +114,7 @@ export default class Profile extends React.Component {
                             <h1></h1>
                             <br></br>
                             <Label for="">Last Name</Label>
-                            <Input type="text" name="fname" id="fname" placeholder="" />
+                            <Input type="text" name="fname" id="fname" value ="Marcus" placeholder="" />
                         </FormGroup>
                     </Col>
                     <Col md={3}>
@@ -122,7 +122,7 @@ export default class Profile extends React.Component {
                             <h1></h1>
                             <br></br>
                             <Label for="">Email</Label>
-                            <Input type="text" name="fname" id="fname" placeholder="" />
+                            <Input type="text" name="fname" id="fname" value ="mthy700@uowmail.edu.au"  placeholder="" />
                         </FormGroup>
                     </Col>
                     <Col md={3}>
@@ -145,41 +145,41 @@ export default class Profile extends React.Component {
                     <Col md={3}>
                         <FormGroup>
                             <Label for="">City</Label>
-                            <Input type="text" name="city" id="city" placeholder="" />
+                            <Input type="text" name="city" id="city" value ="Wollongong"  placeholder=" " />
                             <br></br>
                             <br></br>
                             <br></br>
                             <Label for="">Country</Label>
-                            <Input type="text" name="country" id="country" placeholder="" />
+                            <Input type="text" name="country" id="country" value ="Australia"  placeholder="" />
                         </FormGroup>
                     </Col>
                     <Col md={3}>
                         <FormGroup>
                             <Label for="">Field of Experties</Label>
-                            <Input type="password" name="field" id="field" placeholder="" />
+                            <Input type="password" name="field" id="field" value ="Design"  placeholder="" />
                             <br></br>
                             <br></br>
                             <br></br>
                             <Label for="">Position</Label>
-                            <Input type="text" name="position" id="position" placeholder="" />
+                            <Input type="text" name="position" id="position" value ="Designer"  placeholder="" />
                         </FormGroup>
                     </Col>
                     <Col md={6}>
                         <FormGroup>
                             <Label for='Biography'>Biography</Label>
-                            <Input type='textarea' name='dBiographyesc' id='Biography' placeholder="" />
+                            <Input type='textarea' name='dBiographyesc' id='Biography' value ="Hi, everyone"  placeholder="" />
                         </FormGroup>
                     </Col>
                 </Row>
                 <div >
                     <FormGroup>
                         <Label for='website'>Website</Label>
-                        <Input type='text' name='website' id='website' />
+                        <Input type='text' name='website' id='website' value ="https://staging.ocean-archive.org/"  />
                         <FormText color="muted">* Website URL must start with http:// or https://</FormText>
                     </FormGroup>
                     <FormGroup>
                         <Label for='socialmedia'>Social Media (URL)</Label>
-                        <Input type='text' name='subtitle' id='subtitle' />
+                        <Input type='text' name='subtitle' id='subtitle' value ="https://staging.ocean-archive.org/"  />
                         <FormText color="muted">* All URL's must start with http:// or https://</FormText>
                     </FormGroup>
                     <FormGroup>
