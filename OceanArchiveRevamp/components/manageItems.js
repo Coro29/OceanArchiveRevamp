@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
                 React.createElement(reactstrap_1.DropdownMenu, { className: 'altDropdownMenu' },
                     React.createElement(reactstrap_1.DropdownItem, { onClick: () => this.switchSearch('Title') }, "Title"),
                     React.createElement(reactstrap_1.DropdownItem, { onClick: () => this.switchSearch('Creator') }, "Creator"))),
-            React.createElement("input", { type: 'search', className: 'altSearchBar', placeholder: 'Search My Items' }),
+            React.createElement("input", { type: 'search', className: 'altSearchBar', placeholder: 'Search My Item' }),
             React.createElement("input", { type: 'submit', className: 'altSearchButton', value: 'Search' })));
     }
 }
@@ -191,7 +191,7 @@ class ManageItems extends React.Component {
             React.createElement(SearchBar, null),
             React.createElement("div", { className: 'listSection' },
                 React.createElement(ListHeader, null),
-                this.state.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, visible: data.visible, dateCreated: "01-Jun-2020", title: data.title, creators: 'Territorial Agency', modalOpen: () => this.openModal(data) }))),
+                this.state.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, visible: data.visible, dateCreated: "01-Jun-2020", creators: 'Territorial Agency', title: data.title, modalOpen: () => this.openModal(data) }))),
             React.createElement("div", { className: 'footerMenu' },
                 React.createElement("div", { className: 'fillerBox' }),
                 React.createElement(reactstrap_1.Pagination, null,

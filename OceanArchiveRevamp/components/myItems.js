@@ -59,7 +59,7 @@ class ListItem extends React.Component {
             React.createElement("div", { className: 'listVariableWidth' }, this.props.title),
             React.createElement("div", { className: 'listVariableWidth' }, this.props.creators),
             React.createElement("div", { className: 'listFixedWidth' },
-            React.createElement("div", { className: 'editbtn', onClick: this.props.modalOpen }, "EDIT"))));
+                React.createElement("div", { className: 'editbtn', onClick: this.props.modalOpen }, "EDIT"))));
     }
 }
 class EditModal extends React.Component {
@@ -101,17 +101,17 @@ class EditModal extends React.Component {
 class MyItems extends React.Component {
     constructor(props) {
         super(props);
-        this.toggleModal = () => {
-            this.setState({
-                modalOpen: !this.state.modalOpen
-            });
-        };
         this.switchPage = (index) => {
             //console.log("Index: ", index, " | PagesCount: ", this.pagesCount)
             if (index >= 0 && index < this.pagesCount)
                 this.setState({
                     currentPage: index
                 });
+        };
+        this.toggleModal = () => {
+            this.setState({
+                modalOpen: !this.state.modalOpen
+            });
         };
         this.pageGroup = (centerPage) => {
             if (this.pagesCount > 7) {
@@ -178,12 +178,12 @@ class MyItems extends React.Component {
     render() {
         const { currentPage } = this.state;
         return (React.createElement("div", { className: "ICAcontainer" },
-        React.createElement(EditModal, { isOpen: this.state.modalOpen, toggle: () => this.toggleModal(), data: this.state.dataSet[this.state.editingIndex], deleteItem: () => this.deleteItem(), hideItem: (v) => this.hideItem(v) }),
+            React.createElement(EditModal, { isOpen: this.state.modalOpen, toggle: () => this.toggleModal(), data: this.state.dataSet[this.state.editingIndex], deleteItem: () => this.deleteItem(), hideItem: (v) => this.hideItem(v) }),
             React.createElement("h1", null, "MY ITEMS"),
             React.createElement(SearchBar, null),
             React.createElement("div", { className: 'listSection' },
                 React.createElement(ListHeader, null),
-                this.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: true, dateCreated: "02-Jun-2020", title: data, creators: 'Territorial Agency', modalOpen: () => this.openModal(data) }))),
+                this.dataSet.slice(currentPage * this.itemsPerPage, (currentPage + 1) * this.itemsPerPage).map((data, i) => React.createElement(ListItem, { key: i, published: data.published, dateCreated: "02-Jun-2020", title: data, creators: 'Territorial Agency', modalOpen: () => this.openModal(data) }))),
             React.createElement("div", { className: 'footerMenu' },
                 React.createElement(react_router_dom_1.NavLink, { className: 'buttonSmall', to: "/createItem" }, "+ Add New"),
                 React.createElement("div", { className: 'fillerBox' }),

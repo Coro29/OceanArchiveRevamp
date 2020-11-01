@@ -903,12 +903,12 @@ class CreateCollection extends React.Component {
             activeIndex: 0,
             animating: false,
             progressData: [
-                { title: "Details", submittable: false },
+                { title: "Details", submittable: true },
                 { title: "Category & Tags", submittable: true },
-                { title: "Regions & Legal", submittable: false },
-                { title: "Add Items", submittable: false },
-                { title: "Add Sub-Collections", submittable: false },
-                { title: "Location/s", submittable: false }
+                { title: "Regions & Legal", submittable: true },
+                { title: "Add Items", submittable: true },
+                { title: "Add Sub-Collections", submittable: true },
+                { title: "Location/s", submittable: true }
             ]
         };
         this.mainFocus = 'sci';
