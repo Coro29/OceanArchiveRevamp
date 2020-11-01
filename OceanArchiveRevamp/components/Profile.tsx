@@ -1,18 +1,97 @@
 declare var require: any
 
 var React = require('react');
-
+import { NavLink } from 'react-router-dom';
+import * as Constant from '../constants';
 import {
     ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Pagination, PaginationItem, PaginationLink, Modal, ModalHeader, Form,
     FormFeedback, Label, ModalFooter, Input, CustomInput, FormText, Col, Row,
     FormGroup,
+    ModalBody
 } from 'reactstrap';
+
+class ChangePasswordModal extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    toggle = () => {
+        if (this.props.isOpen)
+            this.props.closeModal();
+    }
+
+
+    closeModal = () => {
+        this.setState({
+            selectedItem: null
+        });
+        this.props.closeModal();
+    }
+
+
+
+    render() {
+        return (
+            <Modal className='largeModal' isOpen={this.props.isOpen} toggle={this.toggle}>
+                <ModalHeader>CHANGE PASSWORD</ModalHeader>
+                
+            </Modal>
+        );
+    }
+}
+
+class DeleteAccountModal extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    toggle = () => {
+        if (this.props.isOpen)
+            this.props.closeModal();
+    }
+
+
+    closeModal = () => {
+        this.setState({
+            selectedItem: null
+        });
+        this.props.closeModal();
+    }
+
+
+
+    render() {
+        return (
+            <Modal className='largeModal' isOpen={this.props.isOpen} toggle={this.toggle}>
+                <ModalHeader>DELETE ACCOUNT</ModalHeader>
+                
+            </Modal>
+        );
+    }
+}
+
 
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
-
+        this.modalRef = React.createRef();
+        this.state = {
+            modalOpen: false
+        }
     }
+
+    openModal = () => {
+        this.setState({
+            modalOpen: true
+        });
+    }
+    
+    closeModal = () => {
+        this.setState({
+            modalOpen: false
+        });
+    }
+
 
     render() {
 
@@ -52,7 +131,10 @@ export default class Profile extends React.Component {
                             <br></br>
                             <br></br>
                             <br></br>
-                            <div className='profileFooterbtn save'>Change Password</div>
+                            <ChangePasswordModal ref={this.modalRef} isOpen={this.state.modalOpen} closeModal={() => this.closeModal()} addItem={(i) => this.addItem(i)} />
+                                <div className='profileFooterbtn photo save' onClick={this.openModal}>
+                                    change password
+                                </div>
                         </FormGroup>
                     </Col>
                 </Row>
@@ -113,7 +195,10 @@ export default class Profile extends React.Component {
                     </FormGroup>
                 </div>
                 <div className='profileFooter'>
-                    <div className='profileFooterbtn delete' onClick={this.toggle}>Delete Account</div>
+                    <DeleteAccountModal ref={this.modalRef} isOpen={this.state.modalOpen} closeModal={() => this.closeModal()} addItem={(i) => this.addItem(i)} />
+                        <div className='profileFooterbtn delete' onClick={this.openModal}>
+                            Delete Account
+                        </div>
                     <div className='fillerBox' />
                     <div className='profileFooterbtn save'>Save</div>
                 </div>
