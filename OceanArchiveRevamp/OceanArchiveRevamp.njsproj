@@ -51,6 +51,9 @@
     <Content Include="images\brushWhite.png" />
     <Content Include="images\greenBlack.png" />
     <Content Include="images\greenWhite.png" />
+    <Content Include="images\IconLicenses.txt">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="images\logo-Archive.png" />
     <Content Include="images\logo-Ocean.png" />
     <Content Include="images\SciTech_Icon_Black.png" />
@@ -58,6 +61,7 @@
     <Content Include="index.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="licenses.txt" />
     <Content Include="logos\Blog.svg" />
     <Content Include="logos\Facebook.svg" />
     <Content Include="logos\FacebookF.svg" />

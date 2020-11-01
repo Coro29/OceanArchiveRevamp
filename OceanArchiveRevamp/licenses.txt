@@ -1,3 +1,15 @@
+List of all licenses
+- MIT
+- ISC
+- BSD-3-Clause
+- Apache-2.0
+- CC-BY-4.0
+- BSD*
+- BSD-2-Clause
+- CC0-1.0
+- Zlib
+- 0BSD
+
 ├─ @babel/code-frame@7.10.4
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/babel/babel
