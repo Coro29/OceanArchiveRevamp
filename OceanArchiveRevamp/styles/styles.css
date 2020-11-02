@@ -896,15 +896,15 @@ hr {
 .breadcrumbsContainer {
     height: 30px;
     font-size: 10pt;
-    color: #787878;
+    color: #CCCCCC;
     line-height: 30px;
     padding-left: 10px;
     box-sizing: border-box;
 }
 
     .breadcrumbsContainer > .lastCrumb {
-        color: #ffffff;
-        text-decoration: underline #ffffff;
+        color: #3FB39A;
+        text-decoration: underline #3FB39A;
     }
 
 .itemCollectionContainer {
@@ -920,7 +920,7 @@ hr {
 
     .itemCollectionContainer > .title {
         flex: 0 0 30px;
-        font-size: 12pt;
+        font-size: 18pt;
         padding: 10px;
         box-sizing: border-box;
     }

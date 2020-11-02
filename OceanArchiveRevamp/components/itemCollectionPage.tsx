@@ -338,7 +338,10 @@ export default class ItemCollectionPage extends React.Component {
     render() {
         return (
             <div className='itemCollectionPage'>
-                <div className='breadcrumbsContainer'>HOME/Octopus Hunting</div>
+                <div className='breadcrumbsContainer'>
+                    <span>HOME/</span>
+                    <span className='lastCrumb'>Octopus Hunting</span>
+                    </div>
                 <MediaQuery minDeviceWidth={1224}>
                     <div style={{ display: 'flex', flex: '1 0 auto' }}>
                         <div className='itemCollectionContainer'>

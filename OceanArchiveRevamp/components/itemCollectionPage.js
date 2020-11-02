@@ -248,7 +248,9 @@ class ItemCollectionPage extends React.Component {
     }
     render() {
         return (React.createElement("div", { className: 'itemCollectionPage' },
-            React.createElement("div", { className: 'breadcrumbsContainer' }, "HOME/Octopus Hunting"),
+            React.createElement("div", { className: 'breadcrumbsContainer' },
+                React.createElement("span", null, "HOME/"),
+                React.createElement("span", { className: 'lastCrumb' }, "Octopus Hunting")),
             React.createElement(react_responsive_1.default, { minDeviceWidth: 1224 },
                 React.createElement("div", { style: { display: 'flex', flex: '1 0 auto' } },
                     React.createElement("div", { className: 'itemCollectionContainer' },
