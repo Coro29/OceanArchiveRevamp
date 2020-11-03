@@ -72,12 +72,17 @@ class GoToLocation extends React.Component {
 class Location extends React.Component {
     constructor(props) {
         super(props);
-        this.map = null;
     }
 
     render() {
         return (
-            <div className={this.props.isMobile ? 'mapLocationInfo mobile' : 'mapLocationInfo'} onMouseOver={this.props.onMouseOver} onMouseOut={this.props.onMouseOut} style={this.props.isFocus ? { backgroundColor: Constant.SECONDARY_COLOUR } : null}>
+            <div
+                className={this.props.isMobile ? 'mapLocationInfo mobile' : 'mapLocationInfo'}
+                onMouseOver={this.props.onMouseOver}
+                onMouseOut={this.props.onMouseOut}
+                style={this.props.isFocus ? { backgroundColor: Constant.SECONDARY_COLOUR } : null}
+                onClick={() => this.props.panToFunc(this.props.location)}
+            >
                 <img src={this.props.src} alt={this.props.title + " thumbnail"} />
                 <div style={{ flex: '0 0 auto' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', height: '95px' }}>
@@ -110,13 +115,16 @@ const testLocations = [
 export default class Map extends React.Component {
     constructor(props) {
         super(props);
+        this.map = null;
         this.state = {
             currentFocus: -1
         }
     }
 
     goToLocation = (location) => {
-        this.map.panTo(location);
+        console.log('Location', location);
+        if (this.map != null && this.map != undefined)
+            this.map.panTo(location);
     }
 
     setCurrentFocus = (i) => {
@@ -140,10 +148,12 @@ export default class Map extends React.Component {
                                             title={location.title}
                                             desc={location.desc}
                                             src={location.src}
+                                            location={location.location}
                                             key={'location' + i}
                                             onMouseOver={() => this.setCurrentFocus(i)}
                                             onMouseOut={() => this.setCurrentFocus(-1)}
                                             isFocus={this.state.currentFocus === i ? true : false}
+                                            panToFunc={this.goToLocation}
                                         />
                                     )
                                 })}
@@ -154,8 +164,8 @@ export default class Map extends React.Component {
                                 onGoogleApiLoaded={({ map, maps }) => { this.map = map }}
                                 yesIWantToUseGoogleMapApiInternals
                                 bootstrapURLKeys={{ key: 'AIzaSyDqIVtQawOQ0DqWTSP3LG60nVhGJvsdSHk' }}
-                                defaultZoom={10}
-                                defaultCenter={{ lat: -33.8688, lng: 151.2093 }}
+                                defaultZoom={8}
+                                defaultCenter={{ lat: -32.578535, lng: 154.128928 }}
                                 options={{ fullscreenControl: false }} >
                                 {testLocations.map((data, i) => {
                                     return (
@@ -186,8 +196,8 @@ export default class Map extends React.Component {
                                 onGoogleApiLoaded={({ map, maps }) => { this.map = map }}
                                 yesIWantToUseGoogleMapApiInternals
                                 bootstrapURLKeys={{ key: 'AIzaSyDqIVtQawOQ0DqWTSP3LG60nVhGJvsdSHk' }}
-                                defaultZoom={10}
-                                defaultCenter={{ lat: -33.8688, lng: 151.2093 }}
+                                defaultZoom={8}
+                                defaultCenter={{ lat: -32.578535, lng: 154.128928 }}
                                 options={{ fullscreenControl: false }}>
                                 {testLocations.map((data, i) => {
                                     return (
@@ -215,10 +225,12 @@ export default class Map extends React.Component {
                                             title={location.title}
                                             desc={location.desc}
                                             src={location.src}
+                                            location={location.location}
                                             key={'location' + i}
                                             onMouseOver={() => this.setCurrentFocus(i)}
                                             onMouseOut={() => this.setCurrentFocus(-1)}
                                             isFocus={this.state.currentFocus === i ? true : false}
+                                            panToFunc={this.goToLocation}
                                         />
                                     )
                                 })}

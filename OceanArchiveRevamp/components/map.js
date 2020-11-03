@@ -57,10 +57,9 @@ class GoToLocation extends React.Component {
 class Location extends React.Component {
     constructor(props) {
         super(props);
-        this.map = null;
     }
     render() {
-        return (React.createElement("div", { className: this.props.isMobile ? 'mapLocationInfo mobile' : 'mapLocationInfo', onMouseOver: this.props.onMouseOver, onMouseOut: this.props.onMouseOut, style: this.props.isFocus ? { backgroundColor: Constant.SECONDARY_COLOUR } : null },
+        return (React.createElement("div", { className: this.props.isMobile ? 'mapLocationInfo mobile' : 'mapLocationInfo', onMouseOver: this.props.onMouseOver, onMouseOut: this.props.onMouseOut, style: this.props.isFocus ? { backgroundColor: Constant.SECONDARY_COLOUR } : null, onClick: () => this.props.panToFunc(this.props.location) },
             React.createElement("img", { src: this.props.src, alt: this.props.title + " thumbnail" }),
             React.createElement("div", { style: { flex: '0 0 auto' } },
                 React.createElement("div", { style: { display: 'flex', flexDirection: 'column', height: '95px' } },
@@ -88,13 +87,16 @@ class Map extends React.Component {
     constructor(props) {
         super(props);
         this.goToLocation = (location) => {
-            this.map.panTo(location);
+            console.log('Location', location);
+            if (this.map != null && this.map != undefined)
+                this.map.panTo(location);
         };
         this.setCurrentFocus = (i) => {
             this.setState({
                 currentFocus: i
             });
         };
+        this.map = null;
         this.state = {
             currentFocus: -1
         };
@@ -106,10 +108,10 @@ class Map extends React.Component {
                     React.createElement("div", { className: 'mapSideBar' },
                         React.createElement(GoToLocation, { goToLocationFunc: this.goToLocation }),
                         React.createElement("div", { className: 'scrollableList' }, testLocations.map((location, i) => {
-                            return (React.createElement(Location, { isMobile: false, title: location.title, desc: location.desc, src: location.src, key: 'location' + i, onMouseOver: () => this.setCurrentFocus(i), onMouseOut: () => this.setCurrentFocus(-1), isFocus: this.state.currentFocus === i ? true : false }));
+                            return (React.createElement(Location, { isMobile: false, title: location.title, desc: location.desc, src: location.src, location: location.location, key: 'location' + i, onMouseOver: () => this.setCurrentFocus(i), onMouseOut: () => this.setCurrentFocus(-1), isFocus: this.state.currentFocus === i ? true : false, panToFunc: this.goToLocation }));
                         }))),
                     React.createElement("div", { className: 'mapContainer' },
-                        React.createElement(google_map_react_1.default, { ref: 'mapRef', onGoogleApiLoaded: ({ map, maps }) => { this.map = map; }, yesIWantToUseGoogleMapApiInternals: true, bootstrapURLKeys: { key: 'AIzaSyDqIVtQawOQ0DqWTSP3LG60nVhGJvsdSHk' }, defaultZoom: 10, defaultCenter: { lat: -33.8688, lng: 151.2093 }, options: { fullscreenControl: false } }, testLocations.map((data, i) => {
+                        React.createElement(google_map_react_1.default, { ref: 'mapRef', onGoogleApiLoaded: ({ map, maps }) => { this.map = map; }, yesIWantToUseGoogleMapApiInternals: true, bootstrapURLKeys: { key: 'AIzaSyDqIVtQawOQ0DqWTSP3LG60nVhGJvsdSHk' }, defaultZoom: 8, defaultCenter: { lat: -32.578535, lng: 154.128928 }, options: { fullscreenControl: false } }, testLocations.map((data, i) => {
                             return ((i === this.state.currentFocus) ?
                                 React.createElement("svg", { className: 'centerActiveWaypoint', width: '25', height: '35', lat: data.location.lat, lng: data.location.lng, key: "waypoint" + i + "focus", onMouseOver: () => this.setCurrentFocus(i), onMouseOut: () => this.setCurrentFocus(-1) },
                                     React.createElement("polygon", { points: "0,12.5 12.5,35 25,12.5", style: { fill: Constant.MAIN_COLOUR, strokeWidth: '0' } }),
@@ -135,7 +137,7 @@ class Map extends React.Component {
                     React.createElement("div", { className: 'mapSideBar mobile' },
                         React.createElement(GoToLocation, { goToLocationFunc: this.goToLocation }),
                         React.createElement("div", { className: 'scrollableList' }, testLocations.map((location, i) => {
-                            return (React.createElement(Location, { isMobile: true, title: location.title, desc: location.desc, src: location.src, key: 'location' + i, onMouseOver: () => this.setCurrentFocus(i), onMouseOut: () => this.setCurrentFocus(-1), isFocus: this.state.currentFocus === i ? true : false }));
+                            return (React.createElement(Location, { isMobile: true, title: location.title, desc: location.desc, src: location.src, location: location.location, key: 'location' + i, onMouseOver: () => this.setCurrentFocus(i), onMouseOut: () => this.setCurrentFocus(-1), isFocus: this.state.currentFocus === i ? true : false, panToFunc: this.goToLocation }));
                         })))))));
     }
 }

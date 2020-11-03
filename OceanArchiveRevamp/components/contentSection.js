@@ -49,8 +49,10 @@ class ContentSection extends React.Component {
                     tabState = s;
                 else {
                     newTabState = ((tabState & ~s) | (~tabState & s)) & 0b0111;
-                    if (newTabState == 0b0111)
-                        tabState = 0b1000 >> i;
+                    if (newTabState == 0b0111) {
+                        tabState = 0b1000;
+                        i = 0;
+                    }
                     else if (newTabState != 0b0)
                         tabState = newTabState;
                 }
