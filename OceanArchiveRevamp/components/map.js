@@ -124,7 +124,7 @@ class Map extends React.Component {
             React.createElement(react_responsive_1.default, { maxDeviceWidth: 1223 },
                 React.createElement("div", { className: "mapSection mobile" },
                     React.createElement("div", { className: 'mapContainer mobile' },
-                        React.createElement(google_map_react_1.default, { ref: 'mapRef', onGoogleApiLoaded: ({ map, maps }) => { this.map = map; }, yesIWantToUseGoogleMapApiInternals: true, bootstrapURLKeys: { key: 'AIzaSyDqIVtQawOQ0DqWTSP3LG60nVhGJvsdSHk' }, defaultZoom: 10, defaultCenter: { lat: -33.8688, lng: 151.2093 }, options: { fullscreenControl: false } }, testLocations.map((data, i) => {
+                        React.createElement(google_map_react_1.default, { ref: 'mapRef', onGoogleApiLoaded: ({ map, maps }) => { this.map = map; }, yesIWantToUseGoogleMapApiInternals: true, bootstrapURLKeys: { key: 'AIzaSyDqIVtQawOQ0DqWTSP3LG60nVhGJvsdSHk' }, defaultZoom: 8, defaultCenter: { lat: -32.578535, lng: 154.128928 }, options: { fullscreenControl: false } }, testLocations.map((data, i) => {
                             return ((i === this.state.currentFocus) ?
                                 React.createElement("svg", { className: 'centerActiveWaypoint', width: '25', height: '35', lat: data.location.lat, lng: data.location.lng, key: "waypoint" + i + "focus" },
                                     React.createElement("polygon", { points: "0,12.5 12.5,35 25,12.5", style: { fill: Constant.MAIN_COLOUR, strokeWidth: '0' } }),

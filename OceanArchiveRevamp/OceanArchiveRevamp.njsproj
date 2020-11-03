@@ -51,11 +51,17 @@
     <Content Include="images\brushWhite.png" />
     <Content Include="images\greenBlack.png" />
     <Content Include="images\greenWhite.png" />
+    <Content Include="images\Licenses.txt">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="images\logo-Archive.png" />
     <Content Include="images\logo-Ocean.png" />
     <Content Include="images\SciTech_Icon_Black.png" />
     <Content Include="images\SciTech_Icon_White.png" />
     <Content Include="index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Licenses.txt">
       <SubType>Code</SubType>
     </Content>
     <Content Include="logos\Blog.svg" />
